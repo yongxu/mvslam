@@ -16,17 +16,13 @@ public:
 	int id;
 	
 
-	std::vector<KeyPoint> getRawKeypoints(){
+	std::vector<Point2f> getRawKeypoints(){
 		return keypoints;
-	};
-	std::vector<KeyPoint> getRawDescriptors(){
-		return descriptors;
 	};
 
 	Ptr<Mat> img;
 	std::vector<Ptr<Mat>> pyramid;
-	std::vector<KeyPoint> keypoints;
-	Mat descriptors;
+	std::vector<Point2f> keypoints;
 
 };
 

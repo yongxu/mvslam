@@ -15,8 +15,8 @@ public:
 
 	Frame* processFrame(Ptr<Mat> f);
 
-	std::vector< DMatch > match2Frames(Frame* f1, Frame* f2);
-	std::vector< DMatch > removeOutliersFromMatch(std::vector< DMatch >& m, double distance);
+	void match2Frames(Frame* f1, Frame* f2);
+	std::vector< DMatch > removeOutliersFromMatch(const std::vector< DMatch >& m, double distance);
 private:
 	Ptr<Feature2D> feature;
 	Ptr<DescriptorMatcher> matcher;

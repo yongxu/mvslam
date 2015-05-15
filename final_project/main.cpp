@@ -25,22 +25,12 @@ int main(int, char)
 		Ptr<Frame> f=fa.processFrame(img);
 		Q.add(f);
 
-		std::cout << "Found " << f->getRawKeypoints().size() << " Keypoints " << std::endl;
-
-		Mat out;
-		drawKeypoints(*img, f->getRawKeypoints(), out, Scalar::all(255));
-
-		imshow("t", out);
 
 		
 		if (Q.size() > 1
 			&& Q.getLastFrame()->getRawKeypoints().size()>0
 			&& Q.getCurrentFrame()->getRawKeypoints().size()>0){
-			auto matches=fa.match2Frames(Q.getLastFrame(), Q.getCurrentFrame());
-			auto betterMatches = fa.removeOutliersFromMatch(matches,100);
-			Mat img_matches;
-			drawMatches(*Q.getLastFrame()->img, Q.getLastFrame()->getRawKeypoints(), *Q.getCurrentFrame()->img, Q.getCurrentFrame()->getRawKeypoints(), betterMatches, img_matches);
-			imshow("t2", img_matches);
+			fa.match2Frames(Q.getLastFrame(), Q.getCurrentFrame());
 			//Mat fundamental = findFundamentalMat(Q.getLastFrame()->getRawKeypoints(), Q.getCurrentFrame()->getRawKeypoints(), FM_RANSAC, 3.0, 0.99);
 			//std::cout << "Fundamental Matrix " << fundamental << std::endl;
 		}

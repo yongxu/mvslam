@@ -44,6 +44,12 @@
     <ClInclude Include="FrameQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="seven_point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RANSAC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="camera.yml">

@@ -22,6 +22,8 @@
     <ClInclude Include="Frame.h" />
     <ClInclude Include="FrameAnalyzer.h" />
     <ClInclude Include="FrameQueue.h" />
+    <ClInclude Include="RANSAC.h" />
+    <ClInclude Include="seven_point.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="camera.yml" />
